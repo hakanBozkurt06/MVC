@@ -1,0 +1,21 @@
+@model Arac
+@{
+    ViewData["Title"] = "AracBilgi";
+}
+
+<h1>Araç Bilgisi</h1>
+
+<div class="card arac-kart mt-3">
+    <div class="card-body">
+        <h5 class="card-title">@Model.Marka @Model.Model</h5>
+        <hr />
+        <p class="card-text"><strong>Marka:</strong> @Model.Marka</p>
+        <p class="card-text"><strong>Model:</strong> @Model.Model</p>
+        <p class="card-text"><strong>Yılı:</strong> @Model.Yil</p>
+    </div>
+</div>
+
+<div class="mt-3">
+    <a asp-action="AracDuzenle" asp-controller="Arac" asp-route-id="@Model.AracId" class="btn btn-warning">Düzenle</a>
+    <a asp-action="Index" asp-controller="Arac" class="btn btn-secondary">Geri Dön</a>
+</div>
